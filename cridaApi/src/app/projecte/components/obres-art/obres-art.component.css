@@ -14,10 +14,36 @@ li > div[name='number']{width: 100px;}
 
 #part_superior
 {
-    width: 50vw;
+    position: relative;
+    width: 60vw;
     padding: 2vh 2vw;
 }
-#part_superior div[name='titol']{justify-content: left;}
+#part_superior div[name='titol']
+{
+    justify-content: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.imgBox
+{
+    position: absolute;
+    left: 65vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.imgBox{width: 200px; height: 200px; border: 1px solid blue;}
+.imgInfo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
+}
+.imgInfo p{ padding: 0 2vw;}
+
 
 #part_inferior
 {

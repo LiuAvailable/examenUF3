@@ -11,8 +11,16 @@
             <div name="titol">{{w.titol}}</div>
             <div name="number">{{w.id}}</div>
             <div><img src={{w.imatge}}></div>
-            <div></div>
+            <div><button (click)="this.mostrarImg(w.imatge, w.autor)">Veure</button></div>
         </li>
+        <div *ngIf="this.selectedImg != '' " class="imgBox">
+            <img src={{this.selectedImg}}>
+            <div class="imgInfo" *ngIf="this.artist != null">
+                <p>Nom:{{artist.name}}</p>
+                <p>Any Neixament:{{artist.birth}}</p>
+                <p>Any defunció:{{artist.death}}</p>
+            </div>
+        </div>
     </ul>
 </section>
 

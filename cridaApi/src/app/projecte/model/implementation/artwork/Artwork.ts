@@ -7,7 +7,8 @@ export class Artwork {
     constructor(obra:any){
         this.titol = obra.title;
         this.id = obra.id;
-        this.imatge = obra.api_link;
+        this.imatge = obra.image_id;
+        this.autor = obra.artist_id;
     }
 
 }

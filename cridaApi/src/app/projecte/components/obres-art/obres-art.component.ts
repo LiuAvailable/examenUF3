@@ -14,6 +14,8 @@ import { Artwork } from '../../model/implementation/artwork/Artwork';
 export class ObresArtComponent {
   artistes:Array<Artist> = [];
   obres:Array<Artwork> = [];
+  selectedImg:string = '';
+  artist!:Artist;
 
   constructor(private httpA:API_artist, private httpW:API_artwork) { 
     this.httpA.getArtists().subscribe(
@@ -22,6 +24,7 @@ export class ObresArtComponent {
       result.forEach(artist => {
         this.artistes.push(new Artist(artist));
       });
+      console.log(result);
     });
 
     this.httpW.getArtworks().subscribe(
@@ -32,6 +35,29 @@ export class ObresArtComponent {
         });
         console.log(result);
       });
+  }
+
+  mostrarImg(img:string, autor:number){
+    this.getArtist(autor)
+    this.getImg(img)
+  }
+ 
+  getArtist(autor:number){
+    this.httpA.getArtist(autor).subscribe(
+      data => {
+        this.artist= new Artist(data.data)
+        console.log(this.artist);
+      }
+    )
+  }
+
+  getImg(img:string){
+    this.httpW.getImatge(img).subscribe(
+      data => {
+        console.log(data);
+        this.selectedImg = data.data;
+      }
+    )
   }
 
 

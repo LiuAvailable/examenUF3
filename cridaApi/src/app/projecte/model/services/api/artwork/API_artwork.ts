@@ -15,6 +15,11 @@ export class API_artwork{
         return this.http.get('https://api.artic.edu/api/v1/artworks', requestOptions);
     }
 
+    getImatge(id:string):Observable<any>{
+        const requestOptions = this.createHeader();
+        return this.http.get('https://www.artic.edu/iiif/2/'+id+'/full/843,/0/default.jpg', requestOptions);
+    }
+
     private createHeader(){
 
         const header = {

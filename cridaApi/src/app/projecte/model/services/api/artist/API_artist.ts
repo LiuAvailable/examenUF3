@@ -14,6 +14,10 @@ export class API_artist{
         const requestOptions = this.createHeader();
         return this.http.get('https://api.artic.edu/api/v1/artists', requestOptions);
     }
+    getArtist(id:number):Observable<any>{
+        const requestOptions = this.createHeader();
+        return this.http.get('https://api.artic.edu/api/v1/artists/'+id, requestOptions);
+    }
 
     private createHeader(){
 
