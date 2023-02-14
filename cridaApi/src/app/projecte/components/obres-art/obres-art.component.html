@@ -1,5 +1,29 @@
-<section id="part_inferior">
+
+<section id="part_superior">
     <ul>
+        <li>
+            <div name="titol">Titol</div>
+            <div name="number">id</div>
+            <div>imatge</div>
+            <div>visualitzar</div>
+        </li>
+        <li *ngFor="let w of this.obres">
+            <div name="titol">{{w.titol}}</div>
+            <div name="number">{{w.id}}</div>
+            <div><img src={{w.imatge}}></div>
+            <div></div>
+        </li>
+    </ul>
+</section>
+
+
+<section id="part_inferior" style="display: none;">
+    <ul>
+        <li>
+            <p>Nom</p>
+            <p>Neixament</p>
+            <p>Defunció</p>
+        </li>
         <li *ngFor="let a of this.artistes">
             <p>{{a.name}}</p>
             <p>{{a.birth}}</p>

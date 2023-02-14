@@ -1,28 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { API_artist } from '../../model/services/api/artist/API_artist';
+import { API_artwork } from '../../model/services/api/artwork/API_artwork';
 
-import { Artist } from '../../model/implementation/Artist/Artists';
+import { Artist } from '../../model/implementation/artist/Artists';
+import { Artwork } from '../../model/implementation/artwork/Artwork';
 
 @Component({
   selector: 'app-obres-art',
   templateUrl: './obres-art.component.html',
   styleUrls: ['./obres-art.component.css']
 })
-export class ObresArtComponent implements OnInit {
-  artistes:Array<Artist> = [];
 
-  constructor(private http:API_artist) { 
-    this.http.getArtists().subscribe(
+export class ObresArtComponent {
+  artistes:Array<Artist> = [];
+  obres:Array<Artwork> = [];
+
+  constructor(private httpA:API_artist, private httpW:API_artwork) { 
+    this.httpA.getArtists().subscribe(
     data => {
       let result:Array<any> = data.data;
       result.forEach(artist => {
         this.artistes.push(new Artist(artist));
       });
-      console.log(this.artistes)
     });
+
+    this.httpW.getArtworks().subscribe(
+      data => {
+        let result:Array<any> = data.data;
+        result.forEach(art => {
+          this.obres.push(new Artwork(art));
+        });
+      });
   }
 
-  ngOnInit(): void {
-  }
 
 }

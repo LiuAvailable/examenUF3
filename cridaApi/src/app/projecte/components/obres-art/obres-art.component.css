@@ -1,0 +1,12 @@
+li
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+}
+li:first-child div {font-weight: 600;}
+li > div { width: 200px;}
+
+li > div[name='titol']{width: 400px;}
+li > div[name='number']{width: 100px;}
