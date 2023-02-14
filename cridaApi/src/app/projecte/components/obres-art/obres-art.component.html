@@ -10,18 +10,27 @@
         <li *ngFor="let w of this.obres">
             <div name="titol">{{w.titol}}</div>
             <div name="number">{{w.id}}</div>
-            <div><img src={{w.imatge}}></div>
+            <div><img *ngIf="w.imatge != null" src="https://www.artic.edu/iiif/2/{{w.imatge}}/full/843,/0/default.jpg"/></div>
             <div><button (click)="this.mostrarImg(w.imatge, w.autor)">Veure</button></div>
         </li>
         <div *ngIf="this.selectedImg != '' " class="imgBox">
-            <img src={{this.selectedImg}}>
-            <div class="imgInfo" *ngIf="this.artist != null">
+            <img src={{this.selectedImg}} (click)="this.showData()">
+            <div class="imgInfo hide" *ngIf="this.artist != null">
                 <p>Nom:{{artist.name}}</p>
                 <p>Any Neixament:{{artist.birth}}</p>
                 <p>Any defunció:{{artist.death}}</p>
             </div>
         </div>
     </ul>
+    <form>
+        <label>documents per plana:</label>
+        <input type="number" #documents>
+        <label>plana:</label>
+        <input type="number" #plana>
+    </form>
+    <button (click)="submit(documents.value, plana.value)">Accedir</button><br>
+    <button (click)="submit(documents.value, '1')">Inici</button>
+
 </section>
 
 

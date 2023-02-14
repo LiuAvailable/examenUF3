@@ -34,7 +34,7 @@ li > div[name='number']{width: 100px;}
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.imgBox{width: 200px; height: 200px; border: 1px solid blue;}
+.imgBox{width: 200px; height: 200px;}
 .imgInfo
 {
     display: flex;
@@ -56,4 +56,20 @@ li > div[name='number']{width: 100px;}
 #part_inferior li div:nth-child(3) p:nth-child(2),
 #part_inferior li div:nth-child(3) p:nth-child(3)
  {width: 20%}
+
+ img{
+    width: 20px;
+    height: 20px;
+ }
+ .imgBox img
+ {
+    width: 100px;
+    height: 100px;
+ }
+
+ .imgInfo.hide { display:none;}
+
+ form{margin:1em;}
+
+ form input {width: 100px;;}
 
