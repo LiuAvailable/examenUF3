@@ -10,3 +10,24 @@ li > div { width: 200px;}
 
 li > div[name='titol']{width: 400px;}
 li > div[name='number']{width: 100px;}
+
+
+#part_superior
+{
+    width: 50vw;
+    padding: 2vh 2vw;
+}
+#part_superior div[name='titol']{justify-content: left;}
+
+#part_inferior
+{
+    width: 70vw;
+    padding: 2vh 2vw;
+}
+#part_inferior li:nth-child(2) div p{font-weight: 600;}
+#part_inferior li div:nth-child(3){width: 25vw;}
+#part_inferior li div:nth-child(3) p:nth-child(1) {width: 60%}
+#part_inferior li div:nth-child(3) p:nth-child(2),
+#part_inferior li div:nth-child(3) p:nth-child(3)
+ {width: 20%}
+

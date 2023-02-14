@@ -30,6 +30,7 @@ export class ObresArtComponent {
         result.forEach(art => {
           this.obres.push(new Artwork(art));
         });
+        console.log(result);
       });
   }
 

@@ -17,17 +17,31 @@
 </section>
 
 
-<section id="part_inferior" style="display: none;">
+<section id="part_inferior">
     <ul>
         <li>
-            <p>Nom</p>
-            <p>Neixament</p>
-            <p>Defunció</p>
+            <div>Titol</div>
+            <div>Imatge</div>
+            <div>Artista</div>
+        </li>
+        
+        <li>
+            <div></div>
+            <div></div>
+            <div>
+                <p>Name</p>
+                <p>Birth</p>
+                <p>Death</p>
+            </div>
         </li>
         <li *ngFor="let a of this.artistes">
-            <p>{{a.name}}</p>
-            <p>{{a.birth}}</p>
-            <p>{{a.death}}</p>
+            <div></div>
+            <div></div>
+            <div>
+                <p>{{a.name}}</p>
+                <p>{{a.birth}}</p>
+                <p>{{a.death}}</p>
+            </div>
         </li>
     </ul>
 </section>
